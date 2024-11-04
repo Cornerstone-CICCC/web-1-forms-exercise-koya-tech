@@ -1,14 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Information Form</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    <form enctype="multipart/form-data" action="index.html" method="get">
+    <form id="useForm" enctype="multipart/form-data" action="index.html" method="get">
         <!-- FORM FIELDS HERE -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div>
+                <Label>Name</Label>
+                <input type="text" name="name" id="">
+            </div>
+            <div>
+                <Label>Email</Label>
+                <input type="email" name="email" id="">
+            </div>
+            <div>
+                <Label>Password(at least 12 characters)</Label>
+                <input type="password" name="password" id="" pattern=".{12,}" required>
+            </div>
+            <div>
+                <Label>Date of Birth</Label>
+                <input type="date" name="date" id="">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preference</legend>
+            <div>
+                <Label>Favorite Color:</Label>
+                <input type="color" name="color" id="">
+            </div>
+            <div>
+                <Label>Hobby</Label>
+                <input type="text" name="" list='hobbyList'>
+                <datalist id="hobbyList">
+                    <option value='Drawing'></option>
+                    <option value='Swimming'></option>
+                    <option value='Dancing'></option>
+                </datalist>
+                <input type="range" name="hobby" id="" min='1' max='10' step='1'>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contact Preference</legend>
+            <div>
+                <Label>Preferred Contact Method</Label>
+                <select name="method" id="">
+                    <option value='email'>Email</option>
+                    <option value='phone'>Phone</option>
+                    <option value='mail'>Mail</option>
+                </select>
+            </div>
+            <div>
+                <Label>Subscribe to Newsletter</Label>
+                <input type="checkbox" name="subscribe" id="">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <label for="male">
+                Male
+                <input type="radio" name="male" id="male">
+            </label>
+            <label for="female">
+                Female
+                <input type="radio" name="female" id="female">
+            </label>
+            <label for="other">
+                Other
+                <input type="radio" name="other" id="other">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>More Information</legend>
+            <textarea name="information" cols="70" rows='10'></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Upload Documents</legend>
+            <Label>Resume and other certificates:</Label>
+            <input type="file" name="document" id="" multiple>
+        </fieldset>
+
+        <fieldset>
+            <legend>Submission</legend>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </fieldset>
     </form>
+
+    <script>
+        document.getElementById('useForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            // console.log(formData);
+            for (let [key, value] of formData.entries()) {
+                console.log(key, value);
+            }
+
+            let message = 'Input :\n\n';
+            for (let [key, value] of formData.entries()) {
+                message += `${key}: ${value}\n`;
+            }
+            console.log(message);
+            alert(message);
+        });
+    </script>
 </body>
+
 </html>
