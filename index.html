@@ -11,36 +11,36 @@
 <body>
     <form id="useForm" enctype="multipart/form-data" action="index.html" method="get">
         <!-- FORM FIELDS HERE -->
-        <fieldset>
-            <legend>Personal Information</legend>
-            <div>
-                <Label>Name</Label>
-                <input type="text" name="name" id="">
+        <fieldset class='border border-solid border-gray-300 p-3'>
+            <legend class='bg-color'>Personal Information</legend>
+            <div class='p-3'>
+                <Label class="block">Name</Label>
+                <input type="text" name="name" id="" class='border border-black'>
             </div>
-            <div>
-                <Label>Email</Label>
-                <input type="email" name="email" id="">
+            <div class='p-3'>
+                <Label class="block">Email</Label>
+                <input type="email" name="email" id="" class='border border-black'>
             </div>
-            <div>
-                <Label>Password(at least 12 characters)</Label>
-                <input type="password" name="password" id="" pattern=".{12,}" required>
+            <div class='p-3'>
+                <Label class='block'>Password(at least 12 characters)</Label>
+                <input type="password" name="password" id="" pattern=".{12,}" required class='border border-black'>
             </div>
-            <div>
-                <Label>Date of Birth</Label>
-                <input type="date" name="date" id="">
+            <div class='p-3'>
+                <Label class='block'>Date of Birth</Label>
+                <input type="date" name="date" id="" class='border border-black'>
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class='border border-solid border-gray-300 p-3'>
             <legend>Preference</legend>
-            <div>
+            <div class='p-3'>
                 <Label>Favorite Color:</Label>
-                <input type="color" name="color" id="">
+                <input type="color" name="color" id="" class='border border-black w-full'>
             </div>
-            <div>
-                <Label>Hobby</Label>
-                <input type="text" name="" list='hobbyList'>
-                <datalist id="hobbyList">
+            <div class='p-3'>
+                <Label class='block'>Hobby</Label>
+                <input type="text" name="" list='hobbyList' class='border border-black'>
+                <datalist id="hobbyList" class='block'>
                     <option value='Drawing'></option>
                     <option value='Swimming'></option>
                     <option value='Dancing'></option>
@@ -49,53 +49,57 @@
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class='border border-solid border-gray-300 p-3'>
             <legend>Contact Preference</legend>
-            <div>
+            <div class='p-3'>
                 <Label>Preferred Contact Method</Label>
-                <select name="method" id="">
+                <select name="method" id="" class='border border-black'>
                     <option value='email'>Email</option>
                     <option value='phone'>Phone</option>
                     <option value='mail'>Mail</option>
                 </select>
             </div>
-            <div>
+            <div class='p-3'>
                 <Label>Subscribe to Newsletter</Label>
                 <input type="checkbox" name="subscribe" id="">
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class='border border-solid border-gray-300 p-3'>
             <legend>Preferences</legend>
-            <label for="male">
-                Male
-                <input type="radio" name="male" id="male">
-            </label>
-            <label for="female">
-                Female
-                <input type="radio" name="female" id="female">
-            </label>
-            <label for="other">
-                Other
-                <input type="radio" name="other" id="other">
-            </label>
+            <div class='flex flex-col'>
+                <label for="male">
+                    Male
+                    <input type="radio" name="male" id="male">
+                </label>
+                <label for="female">
+                    Female
+                    <input type="radio" name="female" id="female">
+                </label>
+                <label for="other">
+                    Other
+                    <input type="radio" name="other" id="other">
+                </label>
+            </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class='border border-solid border-gray-300 p-3'>
             <legend>More Information</legend>
-            <textarea name="information" cols="70" rows='10'></textarea>
+            <textarea name="information" cols="50" rows='10'></textarea>
         </fieldset>
 
-        <fieldset>
+        <fieldset class='border border-solid border-gray-300 p-3'>
             <legend>Upload Documents</legend>
-            <Label>Resume and other certificates:</Label>
+            <Label class='block'>Resume and other certificates:</Label>
             <input type="file" name="document" id="" multiple>
         </fieldset>
 
-        <fieldset>
+        <fieldset class='border border-solid border-gray-300 p-3'>
             <legend>Submission</legend>
-            <button type="reset">Reset</button>
-            <button type="submit">Submit</button>
+            <button type="reset"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Reset</button>
+            <button type="submit"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Submit</button>
         </fieldset>
     </form>
 
